@@ -1,0 +1,37 @@
+.examples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 500px;
+    gap: var(--gap-xl);
+}
+
+.example {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: var(--gap-l);
+    gap: var(--gap-m);
+    position: relative;
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl) var(--black);
+    z-index: 1;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        background: linear-gradient(0, var(--black), transparent 50%, transparent);
+        z-index: -1;
+    }
+
+    img {
+        z-index: -2;
+        object-fit: cover;
+    }
+}

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from "./styles.module.scss"
 import PromptForm from './prompt-form'
 import PromptSuggestions from './prompt-suggestions'
+import Examples from './examples'
 
 function HomePageContainer() {
   return (
@@ -10,6 +11,7 @@ function HomePageContainer() {
       <p>Tell us a prompt and we&apos;ll generate a story for you.</p>
       <PromptForm/>
       <PromptSuggestions/>
+      <Examples/>
     </div>
   )
 }
