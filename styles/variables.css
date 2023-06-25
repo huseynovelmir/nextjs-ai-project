@@ -1,0 +1,44 @@
+:root {
+  --white: #fff;
+  --gray-100: rgb(244 244 245);
+  --gray-200: rgb(228 228 231);
+  --gray-300: rgb(212 212 216);
+  --gray-400: rgb(161 161 170);
+  --gray-500: rgb(113 113 122);
+  --gray-600: rgb(82 82 91);
+  --gray-700: rgb(63 63 70);
+  --gray-800: rgb(39 39 42);
+  --gray-900: rgb(24 24 27);
+  --black-light: rgb(20, 20, 20);
+  --black: rgb(10, 10, 10);
+  --primary: rgb(0 122 255);
+  --danger: rgb(228, 44, 35);
+
+  --black-opaque: rgb(10, 10, 10, 0.5);
+  --gray-800-opaque: rgba(39 39 42, 0.5);
+  --black-light-opaque: rgba(20, 20, 20, 0.5);
+
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 24px;
+  --font-size-xl: 32px;
+  --font-size-2xl: 48px;
+  --font-size-3xl: 64px;
+
+  --gap-xl: 24px;
+  --gap-l: 16px;
+  --gap-m: 12px;
+  --gap-s: 8px;
+  --gap-xs: 4px;
+
+  --radius-xl: 24px;
+  --radius-l: 16px;
+  --radius-m: 12px;
+  --radius-s: 8px;
+  --radius-xs: 4px;
+
+  --shadow-xl: 0 0 30px 0;
+  --shadow-m: 0 0 20px 0;
+  --shadow-s: 0 0 10px 0;
+}

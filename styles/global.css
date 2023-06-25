@@ -1,0 +1,78 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--gray-200);
+  background-color: rgb(10, 10, 10);
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+body::before {
+  z-index: -1;
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  bottom: 0;
+  right: 0;
+  filter: blur(30px);
+  background: radial-gradient(circle at center, var(--gray-900), var(--black));
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr min(1024px, 90%) 1fr;
+  padding-top: calc(var(--gap-xl) * 3);
+}
+
+.layout > * {
+  grid-column: 2;
+}
+
+button {
+  transition: filter 300ms ease;
+}
+
+button:hover {
+  filter: brightness(1.5);
+}
+
+.overlay {
+  --color-gradient-1: #7d7aff80;
+  --color-gradient-2: #2121e280;
+  --color-gradient-3: #fa313180;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      at 71% 77%,
+      var(--color-gradient-1) 0,
+      transparent 21%
+    ),
+    radial-gradient(at 36% 47%, var(--color-gradient-3) 0, transparent 50%),
+    radial-gradient(at 45% 51%, var(--color-gradient-1) 0, transparent 53%),
+    radial-gradient(at 73% 44%, var(--color-gradient-2) 0, transparent 54%),
+    radial-gradient(at 24% 10%, var(--color-gradient-2) 0, transparent 40%),
+    radial-gradient(at 76% 46%, var(--color-gradient-1) 0, transparent 50%);
+
+  filter: blur(44px);
+  z-index: -1;
+  opacity: 0.5;
+}
