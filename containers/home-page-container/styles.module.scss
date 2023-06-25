@@ -1,0 +1,22 @@
+.homePageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--gap-xl);
+}
+
+.title {
+    font-size: calc(var(--font-size-3xl) * 1.25);
+    font-weight: 900;
+    color: var(--gray-100);
+}
+
+.title,
+.description {
+    max-width: 50ch;
+}
+
+.description {
+    font-size: var(--font-size-l);
+    margin-bottom: var(--gap-xl);
+}

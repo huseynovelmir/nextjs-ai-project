@@ -1,0 +1,15 @@
+.promptSuggestions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-m);
+}
+
+.title {
+    margin-left: var(--gap-m);
+}
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-s);
+}

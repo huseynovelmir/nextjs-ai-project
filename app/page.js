@@ -1,8 +1,11 @@
 import React from 'react'
+import HomePageContainer from '@/containers/home-page-container'
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <div>
+      <HomePageContainer/>
+    </div>
   )
 }
 

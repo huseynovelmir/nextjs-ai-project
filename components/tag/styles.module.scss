@@ -1,0 +1,8 @@
+.tag {
+    display: inline-block;
+    padding: var(--gap-s) var(--gap-m);
+    background-color: var(--black-opaque);
+    border: 1px solid var(--gray-800);
+    border-radius: var(--radius-s);
+    font-size: var(--font-size-s);
+}

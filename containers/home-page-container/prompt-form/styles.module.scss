@@ -1,0 +1,57 @@
+.promptForm {
+    width: 100%;
+    border-radius: var(--radius-s);
+    position: relative;
+    padding: 1px;
+    background: linear-gradient(45deg,
+            #ff4593,
+            #ffe713 32%,
+            #17d7ff 66%,
+            #077bff);
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -20px;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(135deg,
+                #ff4593,
+                #ffe713 33%,
+                #17d7ff 66%,
+                #077bff);
+        opacity: 0.2;
+        z-index: -1;
+        filter: blur(1.5rem);
+    }
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    gap: var(--gap-m);
+    background-color: var(--black-light);
+    padding: var(--gap-l);
+    border-radius: var(--radius-s);
+}
+
+.promptTextarea {
+    flex: 1;
+    resize: none;
+}
+
+.generateButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gap-l) var(--gap-xl);
+    background-color: var(--black-light-opaque);
+    transition: opacity 300ms linear;
+    border-radius: var(--radius-s);
+    border: 1px solid var(--gray-800);
+}
+
+.generateButton:disabled {
+    opacity: 0.2;
+}
