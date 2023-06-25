@@ -3,6 +3,7 @@ import "@/styles/variables.css"
 import"@/styles/global.css"
 import { mainFont } from "@/libs/font"
 import Head from 'next/head'
+import { Footer } from "@/components/footer"
 
 
 
@@ -17,7 +18,8 @@ export default function RootLayout({ children }) {
     
       <body className="layout">
         {children}
-        <div className="overlay"></div>
+        <Footer/>
+        <div className="overlay"/>
       </body>
     </html>
   )

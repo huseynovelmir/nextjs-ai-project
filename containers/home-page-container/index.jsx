@@ -4,6 +4,7 @@ import PromptForm from './prompt-form'
 import PromptSuggestions from './prompt-suggestions'
 import Examples from './examples'
 
+
 function HomePageContainer() {
   return (
     <div className={styles.homePageContainer}>

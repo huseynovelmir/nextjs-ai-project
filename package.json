@@ -13,9 +13,11 @@
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "webpack": "^5.88.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.0.1",
     "sass": "^1.63.6"
   }
 }

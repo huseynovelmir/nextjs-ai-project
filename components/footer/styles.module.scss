@@ -1,0 +1,25 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap-m);
+    padding-top: var(--gap-xl);
+    padding-bottom: var(--gap-xl);
+    opacity: 0.25;
+    transition: opacity 500ms ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+.title{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    gap: 10px;
+}
