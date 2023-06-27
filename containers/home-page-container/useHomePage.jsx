@@ -7,9 +7,29 @@ export const HomePageProvider = ({ children }) => {
 
     const [prompt, setPrompt] = useState("")
 
-    const generateImage = () => {
+    const  generateImage = async () => {
         //api call
-        console.log("qaqllii");
+        try{
+         const response =   await fetch ("/api/generate" , {
+                method: "POST",
+                headers:{
+                    "Content-type" : "application/json",
+                },
+
+                body:JSON.stringify({
+                    prompt,
+                }),
+            });
+
+
+            if(!response){
+                throw new Error("Faild to create")
+            }
+            const generatedImage = await response.json()
+        }catch (error){
+            throw new Error("Somthing Went Wrong")
+        }
+      
     };
 
     const changePrompt = (newPrompt) => {
