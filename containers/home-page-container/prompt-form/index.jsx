@@ -1,11 +1,19 @@
 "use client"
-import { useState } from 'react'
 import styles from "./styles.module.scss"
+import { useHomePage } from '../useHomePage'
+
 
 function PromptForm() {
-  const [prompt, setPrompt] = useState("")
-  const handleFormSubmit = (e) => {
+  
+  const {prompt, setPrompt,generateImage} = useHomePage()
+
+  const handlePromptChange = (e) => {
     setPrompt(e.target.value) 
+   }
+
+   const handleFormSubmit = (e) => {
+    e.preventDefault();
+     generateImage();
    }
 
   return (
@@ -17,7 +25,7 @@ function PromptForm() {
           type="text"
           required
           value={prompt}
-          onChange={handleFormSubmit}
+          onChange={handlePromptChange}
           placeholder="An orchestra of characters playing instruments on fire in a chapel + surrounded by ghosts made out of chiseled marble"
         />
 
