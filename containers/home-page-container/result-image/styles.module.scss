@@ -1,0 +1,48 @@
+.resultImage {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease-in-out;
+    animation: open 300ms ease-in-out forwards;
+    overflow: hidden;
+    border-radius: var(--radius-s);
+
+    @keyframes open {
+        100% {
+            grid-template-rows: 1fr;
+        }
+    }
+}
+
+.animation {
+    position: relative;
+
+    img {
+        box-shadow: var(--shadow-xl) var(--black);
+    }
+
+    &:has(img)::before {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        background: linear-gradient(0, var(--black), transparent 50%, transparent);
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--gap-m);
+    position: absolute;
+    bottom: var(--gap-xl);
+    left: var(--gap-xl);
+    right: var(--gap-xl);
+}
+
+.error {
+    color: var(--danger);
+}

@@ -6,35 +6,45 @@ const HomePageContext = createContext();
 export const HomePageProvider = ({ children }) => {
 
     const [prompt, setPrompt] = useState("")
+    const [image, setImage] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false)
 
-    const  generateImage = async () => {
-        //api call
-        try{
-         const response =   await fetch ("/api/generate" , {
+    const generateImage = async () => {
+        setLoading(true);
+        setImage(null);
+
+        try {
+            setLoading(true)
+            const response = await fetch("/api/generate", {
                 method: "POST",
-                headers:{
-                    "Content-type" : "application/json",
+                headers: {
+                    "Content-type": "application/json",
                 },
 
-                body:JSON.stringify({
+                body: JSON.stringify({
                     prompt,
                 }),
             });
 
 
-            if(!response){
-                throw new Error("Faild to create")
-            }
+            if (!response.ok) throw new Error(response.statusText ?? response.status);
+
             const generatedImage = await response.json()
-        }catch (error){
-            throw new Error("Somthing Went Wrong")
+
+            setImage(generatedImage);
+            setError(null)
+        } catch (error) {
+            setError(error)
+
         }
-      
+        setLoading(false)
+
     };
 
     const changePrompt = (newPrompt) => {
         setPrompt(newPrompt)
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
 
@@ -44,17 +54,20 @@ export const HomePageProvider = ({ children }) => {
             setPrompt,
             generateImage,
             changePrompt,
+            image,
+            error,
+            loading
 
 
-    }),
-        [prompt]
-     );
+        }),
+        [prompt, image, error, loading]
+    );
 
-return (
+    return (
 
-    <HomePageContext.Provider value={data}>{children} </HomePageContext.Provider>
-);
-    
+        <HomePageContext.Provider value={data}>{children} </HomePageContext.Provider>
+    );
+
 };
 
 export const useHomePage = () => {

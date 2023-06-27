@@ -1,3 +1,5 @@
+import { resolve } from "styled-jsx/css";
+
 const REPLICATE_MODEL_VERSION =
     "f178fa7a1ae43a9a9af01b833b9d2ecf97b1bcb0acfd2dc5dd04895e042863f1";
 
@@ -39,24 +41,25 @@ export default async function handler(request, response) {
         response.status(400).json("No Prompt provided")
     }
 
-    const predictions = await startGeneration(prompt)
+    // const predictions = await startGeneration(prompt)
+    await new Promise(resolve => setTimeout(resolve ,1000))
 
     let generatedImage;
 
-    while (!generatedImage) {
-        const result = await getGeneration(predictions.urls.get)
+    // while (!generatedImage) {
+    //     const result = await getGeneration(predictions.urls.get)
 
-        if (result.status === "succeeded") {
-            [generatedImage] = result.output
-        } else if (result.status === "faild") {
-            break;
+    //     if (result.status === "succeeded") {
+    //         [generatedImage] = result.output
+    //     } else if (result.status === "faild") {
+    //         break;
 
-        }
-        else{
-            await new Promise((resolve) => setTimeout(resolve,2000));
-        }
+    //     }
+    //     else{
+    //         await new Promise((resolve) => setTimeout(resolve,2000));
+    //     }
 
-    }
+    // }
 
     response.status(200).json(generatedImage ? generatedImage : "Failed to create the image,sorry :(")
 }

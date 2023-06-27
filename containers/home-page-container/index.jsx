@@ -5,6 +5,7 @@ import PromptForm from './prompt-form'
 import PromptSuggestions from './prompt-suggestions'
 import Examples from './examples'
 import { useHomePage } from './useHomePage'
+import { ResultImage } from './result-image'
 
 
 function HomePageContainer() {
@@ -17,6 +18,7 @@ function HomePageContainer() {
       <h1 className={styles.title}>You just imagine,<br />we handle the rest</h1>
       <p>Tell us a prompt and we&apos;ll generate a story for you.</p>
       <PromptForm />
+      <ResultImage/>
       <PromptSuggestions />
       <Examples />
     </div>
