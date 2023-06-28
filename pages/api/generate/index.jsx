@@ -2,9 +2,9 @@ const REPLICATE_MODEL_VERSION =
     "f178fa7a1ae43a9a9af01b833b9d2ecf97b1bcb0acfd2dc5dd04895e042863f1";
 
 const startGeneration = async (prompt) => {
-    const response = await fetch(`${process.env.API_URL}/predictions`, {
+    const response = await fetch(`${process.env.local.API_URL}/predictions`, {
         headers: {
-            Authorization: `Token ${process.env.API_TOKEN}`,
+            Authorization: `Token ${process.env.local.API_TOKEN}`,
             "Content-Type": "application/json",
         },
         method: "POST",
@@ -20,7 +20,7 @@ const startGeneration = async (prompt) => {
 const getGeneration = async (url) => {
     const result = await fetch(url, {
         headers: {
-            Authorization: `Token ${process.env.API_TOKEN}`,
+            Authorization: `Token ${process.env.local.API_TOKEN}`,
             "Content-Type": "application/json",
         },
     });
