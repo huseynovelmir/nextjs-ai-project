@@ -15,7 +15,7 @@ export const HomePageProvider = ({ children }) => {
         setImage(null);
 
         try {
-            setLoading(true)
+         
             const response = await fetch("/api/generate", {
                 method: "POST",
                 headers: {
@@ -23,7 +23,7 @@ export const HomePageProvider = ({ children }) => {
                 },
 
                 body: JSON.stringify({
-                    prompt,
+                    prompt
                 }),
             });
 
@@ -32,8 +32,8 @@ export const HomePageProvider = ({ children }) => {
 
             const generatedImage = await response.json()
 
-            setImage(generatedImage);
             setError(null)
+            setImage(generatedImage);
         } catch (error) {
             setError(error)
 

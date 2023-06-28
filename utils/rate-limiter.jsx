@@ -1,5 +1,5 @@
-import rateLimit from "express-rate-limit"
-import SlowDown from "express-slow-down"
+import rateLimit from "express-rate-limit";
+import slowDown from "express-slow-down";
 
 const applyMiddleware = (middleware) => (request, response) =>
     new Promise((resolve, reject) => {
@@ -19,19 +19,19 @@ export const getRateLimitMiddlewares = () => {
     const keyGenerator = getIP;
 
     return [
-        SlowDown({ keyGenerator, windowMs }),
-        rateLimit({ keyGenerator, windowMs, max })
-    ]
+        slowDown({ keyGenerator, windowMs }),
+        rateLimit({ keyGenerator, windowMs, max }),
+    ];
 };
 
-const middleware = getRateLimitMiddlewares();
+const middlewares = getRateLimitMiddlewares();
 
-async function applyRateLimiting(request, response) {
+async function applyRateLimit(request, response) {
     await Promise.all(
-        middleware
+        middlewares
             .map(applyMiddleware)
             .map((middleware) => middleware(request, response))
     );
 }
 
-export { applyRateLimiting }
+export { applyRateLimit };
