@@ -1,5 +1,8 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+[Click to visit website](https://nextjs-ai-project-ten.vercel.app/)
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/c5ec47ad82454a63e652/maintainability)](https://codeclimate.com/github/huseynovelmir/nextjs-ai-project/maintainability)
 
 
