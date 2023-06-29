@@ -10,16 +10,24 @@ export const HomePageProvider = ({ children }) => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false)
 
+
+    const changePrompt = (newPrompt) => {
+        setPrompt(newPrompt)
+        window.scrollTo(0, 0);
+    }
+
     const generateImage = async () => {
         setLoading(true);
         setImage(null);
 
         try {
-         
+            setLoading(true);
+
+
             const response = await fetch("/api/generate", {
                 method: "POST",
                 headers: {
-                    "Content-type": "application/json",
+                    "Content-Type": "application/json",
                 },
 
                 body: JSON.stringify({
@@ -39,14 +47,7 @@ export const HomePageProvider = ({ children }) => {
 
         }
         setLoading(false)
-
-    };
-
-    const changePrompt = (newPrompt) => {
-        setPrompt(newPrompt)
-        window.scrollTo(0, 0);
     }
-
 
     const data = useMemo(
         () => ({
@@ -60,13 +61,16 @@ export const HomePageProvider = ({ children }) => {
 
 
         }),
+
         [prompt, image, error, loading]
     );
 
     return (
 
-        <HomePageContext.Provider value={data}>{children} </HomePageContext.Provider>
-    );
+        <HomePageContext.Provider value={data} >{children}</HomePageContext.Provider>
+    )
+
+
 
 };
 
@@ -74,3 +78,5 @@ export const useHomePage = () => {
     const context = useContext(HomePageContext);
     return context;
 };
+
+

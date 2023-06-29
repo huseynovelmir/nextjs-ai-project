@@ -35,3 +35,20 @@
         object-fit: cover;
     }
 }
+
+
+@media only screen and (max-width: 768px) {
+    .examples {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .examples {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+
+    }
+}

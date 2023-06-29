@@ -46,3 +46,23 @@
 .error {
     color: var(--danger);
 }
+
+
+// @media only screen and (max-width: 768px) {
+//     .resultImage{
+//         // width: 50%;
+
+//     }
+// }
+
+@media only screen and (max-width: 500px) {
+    .resultImage{
+        width: 100%;
+    }
+    .content {
+        width: 60%;
+      display: flex;
+      flex-direction: column;
+
+    }
+}
