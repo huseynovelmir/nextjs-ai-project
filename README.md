@@ -2,7 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/c5ec47ad82454a63e652/maintainability)](https://codeclimate.com/github/huseynovelmir/nextjs-ai-project/maintainability)
 
-# AI Project
+# AI Project [click to visit the site](https://nextjs-ai-project-ten.vercel.app)
 
 This project is an artificial intelligence platform developed using Next.js. It provides users with an environment where they can interact and experience various artificial intelligence technologies.
 
